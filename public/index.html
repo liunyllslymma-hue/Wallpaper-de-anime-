@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a12">
+  <meta name="description" content="Wallpaper de Anime — encontre wallpapers cinematográficos dos seus animes favoritos.">
+  <title>Wallpaper de Anime | Sua galeria definitiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Wallpaper de Anime início">
+      <span class="brand-mark">W<span>A</span></span>
+      <span class="brand-name">WALLPAPER <b>DE ANIME</b></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#galeria">Explorar</a><a href="#categorias">Animes</a>
+    </nav>
+    <button class="admin-open" id="adminOpen"><span>＋</span> Área do criador</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> UNIVERSO ANIME • WALLPAPERS EM ALTA QUALIDADE</div>
+        <h1>SUA PRÓXIMA<br><em>OBSESSÃO</em><br>COMEÇA AQUI.</h1>
+        <p>Os mundos que você ama. Os personagens que marcaram sua história. Encontre seu próximo wallpaper.</p>
+        <a class="primary-btn" href="#galeria">EXPLORAR GALERIA <span>↗</span></a>
+        <div class="hero-stats"><div><strong id="wallpaperCount">0</strong><small>WALLPAPERS</small></div><i></i><div><strong id="animeCount">0</strong><small>ANIMES</small></div><i></i><div><strong>∞</strong><small>UNIVERSOS</small></div></div>
+      </div>
+      <div class="hero-art" aria-label="Arte abstrata de anime">
+        <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+        <div class="hero-kanji">魂</div><div class="hero-slice"></div>
+        <div class="hero-caption"><span>01 / INFINITE WORLDS</span><b>BEYOND<br>THE FRAME.</b></div>
+      </div>
+      <div class="vertical-note">ANIME CULTURE · EST. 2026</div>
+    </section>
+
+    <section class="category-section" id="categorias">
+      <div class="section-heading"><div><span class="eyebrow">ESCOLHA SEU UNIVERSO</span><h2>EXPLORE POR <em>ANIME</em></h2></div><span class="section-index">01 — CATEGORIAS</span></div>
+      <div class="category-list" id="categoryList">
+        <button class="category-chip active" data-category="Todos">Todos <span>✦</span></button>
+        <button class="category-chip" data-category="Bleach">Bleach <span>↗</span></button>
+        <button class="category-chip" data-category="Naruto">Naruto <span>↗</span></button>
+        <button class="category-chip" data-category="One Piece">One Piece <span>↗</span></button>
+        <button class="category-chip" data-category="Hunter x Hunter">Hunter x Hunter <span>↗</span></button>
+        <button class="category-chip" data-category="Dragon Ball">Dragon Ball <span>↗</span></button>
+        <button class="category-chip" data-category="Outros">Outros <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galeria">
+      <div class="section-heading gallery-heading"><div><span class="eyebrow">COLEÇÃO EM DESTAQUE</span><h2>WALLPAPERS <em>SELECIONADOS</em></h2></div><div class="gallery-tools"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar personagem ou anime..."></label><span class="section-index" id="resultCount">0 IMAGENS</span></div></div>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="empty-state"><div class="empty-symbol">✦</div><h3>SUA GALERIA COMEÇA AQUI</h3><p>Os wallpapers publicados por você vão aparecer neste espaço.</p><button class="text-btn" id="emptyAdmin">PUBLICAR PRIMEIRA IMAGEM ↗</button></div>
+      </div>
+    </section>
+
+    <section class="quote-band"><span>「</span><p>UM UNIVERSO. MILHARES DE HISTÓRIAS.<br><em>UMA PAIXÃO SEM LIMITES.</em></p><span>」</span></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">W<span>A</span></span><span class="brand-name">WALLPAPER <b>DE ANIME</b></span></a><span>FEITO PARA QUEM VIVE ANIME.</span><span>© 2026 WALLPAPER DE ANIME</span></footer>
+
+  <div class="modal-backdrop" id="adminModal" aria-hidden="true">
+    <section class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <div class="modal-kicker">PAINEL PRIVADO · ACESSO RESTRITO</div>
+      <h2 id="modalTitle">ÁREA DO <em>CRIADOR</em></h2>
+      <div id="loginPanel">
+        <p class="modal-intro">Entre com suas credenciais para publicar e gerenciar seus wallpapers.</p>
+        <form id="loginForm" class="form-stack">
+          <label>USUÁRIO<input name="username" autocomplete="username" required placeholder="Seu usuário"></label>
+          <label>SENHA<input name="password" type="password" autocomplete="current-password" required placeholder="Sua senha"></label>
+          <button class="primary-btn full-btn" type="submit">ENTRAR NO PAINEL ↗</button>
+          <p class="form-message" id="loginMessage"></p>
+        </form>
+      </div>
+      <div id="uploadPanel" hidden>
+        <div class="admin-welcome"><span class="online-dot"></span> VOCÊ ESTÁ NO CONTROLE <button id="logoutBtn" class="logout-btn">SAIR</button></div>
+        <form id="uploadForm" class="form-stack">
+          <label>IMAGEM DO WALLPAPER<input name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required></label>
+          <label>TÍTULO<input name="title" maxlength="90" required placeholder="Ex.: Ichigo — Bankai"></label>
+          <label>ANIME<select name="anime" required><option value="">Selecione uma categoria</option><option>Bleach</option><option>Naruto</option><option>One Piece</option><option>Hunter x Hunter</option><option>Dragon Ball</option><option>Jujutsu Kaisen</option><option>Demon Slayer</option><option>Outro</option></select></label>
+          <label>DESCRIÇÃO <small>(opcional)</small><textarea name="description" maxlength="300" rows="2" placeholder="Conte um pouco sobre esta arte..."></textarea></label>
+          <p class="upload-hint">JPG, PNG, WEBP ou GIF · Máximo de 20 MB.</p>
+          <button class="primary-btn full-btn" type="submit">PUBLICAR WALLPAPER ＋</button>
+          <p class="form-message" id="uploadMessage"></p>
+        </form>
+        <div class="manage-title">SUAS PUBLICAÇÕES <span id="adminCount">0</span></div>
+        <div id="adminItems" class="admin-items"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+    <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <div class="lightbox-content"><img id="lightboxImage" alt=""><div class="lightbox-info"><div><span id="lightboxAnime"></span><h3 id="lightboxTitle"></h3></div><a id="downloadBtn" class="primary-btn" href="#" download>BAIXAR WALLPAPER ↓</a></div></div>
+    <button class="lightbox-arrow next" id="lightboxNext" aria-label="Próximo">›</button>
+  </div>
+</body>
+</html>
